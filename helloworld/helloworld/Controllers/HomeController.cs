@@ -32,6 +32,9 @@ namespace helloworld.Controllers
         {
             ViewBag.Message = "Your test page.";
             Info result = new Info("new");
+            Console.WriteLine(result.Name);
+            result.ChangeName("cool");
+            Console.WriteLine(result.Name);
             return View(result);
         }
     }
