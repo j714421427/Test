@@ -28,7 +28,7 @@ namespace helloworld.Controllers
             return View();
         }
 
-        public ActionResult Test()
+        public ActionResult Adult()
         {
             ViewBag.Message = "Your test page.";
             Info result = new Info("new");
