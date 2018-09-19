@@ -37,5 +37,10 @@ namespace helloworld.Controllers
             Console.WriteLine(result.Name);
             return View(result);
         }
+
+        public ActionResult JieLinEdit()
+        {
+            return View();
+        }
     }
 }
