@@ -1,0 +1,42 @@
+﻿@model List<helloworld.Models.ViewLogContent>
+@{
+    ViewBag.Title = "Log";
+}
+
+<h2>Log</h2>
+
+</form>
+
+<form method="POST" action="Query">
+    <input type="text" name="date" value="0" />
+    <input type="submit" />
+</form>
+
+<table>
+    <tr>
+        <th>序號</th>
+        <th>等級</th>
+        <th>種類</th>
+        <th>內容</th>
+        <th>階段</th>
+        <th>時間</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        @:<tr>
+            <td> @item.Id </td>
+            <td> @item.Level </td>
+            <td> @item.Type </td>
+            <td> @item.Content </td>
+            <td> @item.Status </td>
+            <td> @item.CreatedTime </td>
+        @:</tr>
+    }
+</table>
+
+<script>
+
+    alert("test");
+
+</script>

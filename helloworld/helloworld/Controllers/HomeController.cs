@@ -1,4 +1,7 @@
-﻿using helloworld.Models;
+﻿using helloworld.IService;
+using helloworld.Models;
+using helloworld.Service;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +12,10 @@ namespace helloworld.Controllers
 {
     public class HomeController : Controller
     {
+        private ILogService logService;
+        public HomeController() {
+            this.logService = new LogService();
+        }
         public ActionResult Index()
         {
             return View();
@@ -36,6 +43,31 @@ namespace helloworld.Controllers
             result.ChangeName("cool");
             Console.WriteLine(result.Name);
             return View(result);
+        }
+
+        public ActionResult Game()
+        {
+            string domainName = System.Web.HttpContext.Current.Request.Url.Host;
+
+            Info result = new Info("Game");
+            result.Url = domainName;
+
+            return View(result);
+        }
+        
+
+        public ActionResult Log()
+        {
+            ViewBag.Message = "Your log page.";
+
+            return View("Log", logService.ReadLog(""));
+        }
+
+        [HttpPost]
+        public ActionResult Query(string date)
+        {
+
+            return View("Log", logService.ReadLog(date));
         }
 
         public ActionResult JieLinEdit()

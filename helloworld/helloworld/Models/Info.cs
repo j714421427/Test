@@ -13,6 +13,8 @@ namespace helloworld.Models
 
         public string Name { get; set; }
 
+        public string Url { get; set; }
+
         public void ChangeName(string name)
         {
             this.Name = name;
