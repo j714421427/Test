@@ -35,10 +35,10 @@ Content-Type： `application/json`
 
 | 名称 | 地址 | Http-Method |
 |:------:|------|:------:|
-|存款请求|http://awaitUpdate/deposits    | `POST` |
-|存款查询|http://awaitUpdate/deposits    | `GET` |
-|提款请求|http://awaitUpdate/withdrawals | `POST` |
-|提款查询|http://awaitUpdate/withdrawals | `GET` |
+|存款请求|http://203.60.2.122:61830/deposits    | `POST` |
+|存款查询|http://203.60.2.122:61830/deposits    | `GET` |
+|提款请求|http://203.60.2.122:61830/withdrawals | `POST` |
+|提款查询|http://203.60.2.122:61830/withdrawals | `GET` |
 
 ---
 
